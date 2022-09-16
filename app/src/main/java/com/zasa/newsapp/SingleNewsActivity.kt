@@ -1,5 +1,6 @@
 package com.zasa.newsapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -27,6 +28,10 @@ class SingleNewsActivity : AppCompatActivity() {
 
         fabAddToFavourite.setOnClickListener {
             Toast.makeText(this, "clicked", Toast.LENGTH_SHORT).show()
+            val favouriteIntent = Intent(this, FavouriteFragment::class.java)
+            favouriteIntent.putExtra("image", image)
+            favouriteIntent.putExtra("title", title)
+            favouriteIntent.putExtra("time", time)
         }
 
     }
