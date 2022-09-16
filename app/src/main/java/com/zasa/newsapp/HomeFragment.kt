@@ -1,11 +1,13 @@
 package com.zasa.newsapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.zasa.newsapp.Utils.API_KEY
 import com.zasa.newsapp.Utils.BASE_URL
@@ -39,9 +41,34 @@ class HomeFragment : Fragment() {
                 val body = response.body()
                 Log.i(TAG, "response : $body")
                 rvLatest.adapter = breakingNewsAdapter
-                rvLatest.layoutManager = LinearLayoutManager(requireContext().applicationContext, LinearLayoutManager.HORIZONTAL, false)
+                rvLatest.layoutManager = LinearLayoutManager(
+                    requireContext().applicationContext,
+                    LinearLayoutManager.HORIZONTAL,
+                    false
+                )
                 newsList.addAll(body!!.articles)
                 breakingNewsAdapter.notifyDataSetChanged()
+
+                breakingNewsAdapter.setOnItemClickListener(object :
+                    BreakingNewsAdapter.onItemClickListner {
+                    override fun onItemClick(position: Int) {
+                        Toast.makeText(
+                            requireContext().applicationContext,
+                            "item clicked $position",
+                            Toast.LENGTH_SHORT
+                        ).show()
+
+                        val singleNewsActivityIntent = Intent(requireContext().applicationContext, SingleNewsActivity::class.java)
+                        singleNewsActivityIntent.putExtra("image", newsList[position].urlToImage)
+                        singleNewsActivityIntent.putExtra("time", newsList[position].publishedAt)
+                        singleNewsActivityIntent.putExtra("title", newsList[position].title)
+                        singleNewsActivityIntent.putExtra("author", newsList[position].author)
+                        singleNewsActivityIntent.putExtra("description", newsList[position].description)
+                        startActivity(singleNewsActivityIntent)
+                    }
+
+                })
+
             }
 
             override fun onFailure(call: Call<NewsData>, t: Throwable) {

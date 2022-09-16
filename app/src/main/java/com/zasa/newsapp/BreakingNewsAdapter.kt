@@ -17,7 +17,18 @@ import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 class BreakingNewsAdapter(val context: Context, val breakingNewsList: List<Article>) :
     RecyclerView.Adapter<BreakingNewsAdapter.ViewHolder>() {
 
-    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    lateinit var mListener : onItemClickListner
+
+    interface onItemClickListner{
+        fun onItemClick(position: Int)
+    }
+
+    fun setOnItemClickListener(listener: onItemClickListner){
+        mListener = listener
+
+    }
+
+    inner class ViewHolder(itemView: View, listener: onItemClickListner) : RecyclerView.ViewHolder(itemView) {
         fun bind(breakingNews: Article) {
             itemView.findViewById<TextView>(R.id.tvUsername).text = breakingNews.author
             itemView.findViewById<TextView>(R.id.tvHeadline).text = breakingNews.title
@@ -25,10 +36,16 @@ class BreakingNewsAdapter(val context: Context, val breakingNewsList: List<Artic
             Glide.with(context).load(breakingNews.urlToImage).transform(CenterCrop(), RoundedCorners(20)).into(itemView.findViewById(R.id.ivBreakingNes))
         }
 
+        init {
+            itemView.setOnClickListener {
+                listener.onItemClick(adapterPosition)
+            }
+        }
+
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ViewHolder(LayoutInflater.from(context).inflate(R.layout.item_latest, parent, false))
+        return ViewHolder(LayoutInflater.from(context).inflate(R.layout.item_latest, parent, false), mListener)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
