@@ -12,14 +12,14 @@ import kotlinx.android.synthetic.main.item_favourite.view.*
  **@Project -> NewsApp
  **@Author -> Sangeeth on 9/16/2022
  */
-class FavouriteAdapter(val context: Context, val favouriteList: List<Article>) :
+class FavouriteAdapter(val context: Context, val favouriteList: List<FavouriteData>) :
     RecyclerView.Adapter<FavouriteAdapter.ViewHolder>() {
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
-        fun bind(favouriteList: Article) {
-            Glide.with(context).load(favouriteList.urlToImage).into(itemView.ivFavouriteImage)
+        fun bind(favouriteList: FavouriteData) {
+            Glide.with(context).load(favouriteList.image).into(itemView.ivFavouriteImage)
             itemView.tvFavouriteHeadline.text = favouriteList.title
-            itemView.tvFavouriteUpdatedTime.text = favouriteList.publishedAt
+            itemView.tvFavouriteUpdatedTime.text = favouriteList.time
         }
 
     }

@@ -27,7 +27,7 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        val newsList = mutableListOf<Article>()
+        val newsList = arrayListOf<Article>()
         val breakingNewsAdapter = BreakingNewsAdapter(requireContext().applicationContext, newsList)
 
         val retrofit =
@@ -58,12 +58,15 @@ class HomeFragment : Fragment() {
                             Toast.LENGTH_SHORT
                         ).show()
 
+
                         val singleNewsActivityIntent = Intent(requireContext().applicationContext, SingleNewsActivity::class.java)
+
                         singleNewsActivityIntent.putExtra("image", newsList[position].urlToImage)
                         singleNewsActivityIntent.putExtra("time", newsList[position].publishedAt)
                         singleNewsActivityIntent.putExtra("title", newsList[position].title)
                         singleNewsActivityIntent.putExtra("author", newsList[position].author)
                         singleNewsActivityIntent.putExtra("description", newsList[position].description)
+
                         startActivity(singleNewsActivityIntent)
                     }
 
