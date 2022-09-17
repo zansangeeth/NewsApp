@@ -55,6 +55,10 @@ The following **extensions** are not implemented:
 
 Here's a walkthrough of implemented user stories:
 
+# Screenshots
+Screen | #1 | #2 |
+--- | --- | --- |
+Imaages | ![Screenshot_20220917_214006](https://user-images.githubusercontent.com/42418189/190866601-2a4ed719-5f01-422e-89a8-bbb8bdcbc6ff.png) | ![Screenshot_20220917_214024](https://user-images.githubusercontent.com/42418189/190866619-e5f21079-1087-46d8-8c15-b4b6311c56d4.png) |
 
 
 ## Notes
