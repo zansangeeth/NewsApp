@@ -1,10 +1,9 @@
-package com.zasa.newsapp
+package com.zasa.newsapp.api
 
-import com.google.gson.annotations.SerializedName
+import com.zasa.newsapp.response.NewsData
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Query
-import java.security.Key
 
 /**
  **@Project -> NewsApp

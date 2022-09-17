@@ -1,7 +1,8 @@
-package com.zasa.newsapp
+package com.zasa.newsapp.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.zasa.newsapp.R
 import kotlinx.android.synthetic.main.activity_search_results.*
 
 class SearchResultsActivity : AppCompatActivity() {

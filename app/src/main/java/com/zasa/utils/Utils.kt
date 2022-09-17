@@ -1,4 +1,4 @@
-package com.zasa.newsapp
+package com.zasa.utils
 
 /**
  **@Project -> NewsApp

@@ -1,4 +1,4 @@
-package com.zasa.newsapp
+package com.zasa.newsapp.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -9,6 +9,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
+import com.zasa.newsapp.response.Article
+import com.zasa.newsapp.R
 
 /**
  **@Project -> NewsApp
@@ -33,7 +35,9 @@ class BreakingNewsAdapter(val context: Context, val breakingNewsList: List<Artic
             itemView.findViewById<TextView>(R.id.tvUsername).text = breakingNews.author
             itemView.findViewById<TextView>(R.id.tvHeadline).text = breakingNews.title
             itemView.findViewById<TextView>(R.id.tvPublishedAt).text = breakingNews.publishedAt
-            Glide.with(context).load(breakingNews.urlToImage).transform(CenterCrop(), RoundedCorners(20)).into(itemView.findViewById(R.id.ivBreakingNes))
+            Glide.with(context).load(breakingNews.urlToImage).transform(CenterCrop(), RoundedCorners(20)).into(itemView.findViewById(
+                R.id.ivBreakingNes
+            ))
         }
 
         init {

@@ -1,25 +1,27 @@
-package com.zasa.newsapp
+package com.zasa.newsapp.ui
 
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
-import android.view.SearchEvent
 import android.view.View
 import android.view.ViewGroup
-import android.widget.SearchView
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.zasa.newsapp.Utils.API_KEY
-import com.zasa.newsapp.Utils.BASE_URL
+import com.zasa.newsapp.api.NewsApi
+import com.zasa.newsapp.R
+import com.zasa.utils.Utils.API_KEY
+import com.zasa.utils.Utils.BASE_URL
+import com.zasa.newsapp.adapter.BreakingNewsAdapter
+import com.zasa.newsapp.response.Article
+import com.zasa.newsapp.response.NewsData
 import kotlinx.android.synthetic.main.fragment_home.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import java.time.temporal.TemporalQuery
 
 private const val TAG = "HomeFragment"
 

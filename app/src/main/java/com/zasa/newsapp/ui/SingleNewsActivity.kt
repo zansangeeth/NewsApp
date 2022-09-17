@@ -1,12 +1,12 @@
-package com.zasa.newsapp
+package com.zasa.newsapp.ui
 
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
+import com.zasa.newsapp.R
 import kotlinx.android.synthetic.main.activity_single_news.*
-import kotlinx.android.synthetic.main.fragment_favourite.*
 
 private const val TAG = "SingleNewsActivity"
 

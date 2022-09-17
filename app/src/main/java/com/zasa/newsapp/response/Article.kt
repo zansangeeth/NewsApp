@@ -1,4 +1,4 @@
-package com.zasa.newsapp
+package com.zasa.newsapp.response
 
 data class Article(
     val author: String,

@@ -1,10 +1,11 @@
-package com.zasa.newsapp
+package com.zasa.newsapp.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.ui.NavigationUI.setupWithNavController
+import com.zasa.newsapp.R
 import com.zasa.newsapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {

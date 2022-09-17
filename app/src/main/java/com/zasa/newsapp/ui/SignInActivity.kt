@@ -1,4 +1,4 @@
-package com.zasa.newsapp
+package com.zasa.newsapp.ui
 
 import android.content.Context
 import android.content.Intent
@@ -6,6 +6,7 @@ import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.zasa.newsapp.R
 import kotlinx.android.synthetic.main.activity_sign_in.*
 
 private const val TAG = "SignInActivity"
