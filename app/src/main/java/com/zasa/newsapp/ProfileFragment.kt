@@ -1,35 +1,32 @@
 package com.zasa.newsapp
-
 import android.content.Context
-import android.content.Context.MODE_PRIVATE
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import androidx.navigation.fragment.findNavController
-import kotlinx.android.synthetic.main.activity_sign_in.*
+import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.fragment_profile.*
+import kotlinx.android.synthetic.main.fragment_profile.view.*
 
 class ProfileFragment : Fragment() {
 
-    lateinit var preferences : SharedPreferences
+    lateinit var sharedPreferences: SharedPreferences
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
 
-        preferences = this.requireActivity().getSharedPreferences("SHARED_PREF", Context.MODE_PRIVATE)
+        sharedPreferences = activity?.getSharedPreferences("SHARED_PREF", Context.MODE_PRIVATE)!!
 
-        val username= preferences.getString("USERNAME", "")
-        tvProfileName.text = username
+        val username = sharedPreferences.getString("USERNAME", "")
+//        tvProfileName.text = username
+
 
 //        btnProfileSignOut.setOnClickListener {
-//            val editor : SharedPreferences.Editor? = preferences.edit()
+//            val editor : SharedPreferences.Editor? = sharedPreferences.edit()
 //            editor?.commit()
 //            editor?.apply()
 //
@@ -38,8 +35,11 @@ class ProfileFragment : Fragment() {
 //            activity?.finish()
 //
 //        }
+
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_profile, container, false)
+
+
     }
 
 

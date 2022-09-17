@@ -18,4 +18,10 @@ interface NewsApi {
         @Query("country") country : String
     ) : Call<NewsData>
 
+    @GET("everything")
+    fun getSearchNews(
+        @Query("q") q : String,
+        @Query("apiKey") apiKey : String
+    ) : Call<NewsData>
+
 }
