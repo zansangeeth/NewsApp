@@ -2,7 +2,7 @@
  
 Sangeeth Amirthanathan
 
-**XYZ Rest** is an native android app user view, read and add to favourite the news.
+**News-App** is an native android app user view, read and add to favourite the news.
 
 Time spent: **3** days spent in total
 
