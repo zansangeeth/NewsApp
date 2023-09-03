@@ -2,7 +2,7 @@
  
 Sangeeth Amirthanathan
 
-**XYZ Rest** is an native android app user can view restaurants, view detail pages and view branch location on map view
+**XYZ Rest** is an native android app user view, read and add to favourite the news.
 
 Time spent: **3** days spent in total
 
@@ -48,7 +48,7 @@ The following **extensions** are implemented:
 The following **extensions** are not implemented:
 
 * [ ] favourites
-* [ ] Logout screen
+* [ ] Bottom Navigation
 * [ ] search results
 
 ## Image Walkthrough
